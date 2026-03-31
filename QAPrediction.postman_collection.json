@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "QA API",
+    "_postman_id": "qa-api-123",
+    "description": "API Question Answering con AWS Lambda + SageMaker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST Preguntar",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"context\": \"My name is Maykol and I teach Cloud Computing.\",\n  \"question\": \"What does Maykol teach?\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/preguntar",
+          "host": ["{{baseUrl}}"],
+          "path": ["preguntar"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://TU_API_ID.execute-api.us-east-1.amazonaws.com",
+      "type": "string"
+    }
+  ]
+}
